@@ -191,11 +191,11 @@ class Facade():
         self.trip = TripProxy(Trip())
         self._trips = {}
 
-    def add_trip(self, trip: TripProxy):
-        if trip not in self._trips:
-            self._trips[trip] = TripProxy(Trip())
+     def add_trip(self, trip: TripProxy):
+        if trip in self._trips:
+            print(f'ВНИМАНИЕ: Такой заказ уже был создан и подтвержден!\n')
         else:
-            print('Такой заказ уже был создан и подтвержден!')
+            self._trips[trip] = TripProxy(Trip())
 
     def get_status_orders(self):
         self.get_cars_in_park()
