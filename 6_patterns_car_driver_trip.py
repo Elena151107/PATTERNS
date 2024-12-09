@@ -112,10 +112,8 @@ class GPS(ABC):
 class GPSAdapter(GPS):
     def __init__(self, adapt: Car):
         self.adapt = adapt
-        # self.location = None
 
     def get_location(self, location: str='База'):
-        # self.location = location
         return self.adapt.set_loc(location)
 
     def info_by_car(self):
