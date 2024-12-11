@@ -113,7 +113,6 @@ class GPSAdapter(GPS):
     def __init__(self, adapt: Car):
         self.adapt = adapt
         self.location = None
-        self.car_brand = None
 
     def get_location(self, location: str='База'):
         return self.adapt.set_loc(location)
@@ -133,8 +132,6 @@ class PremiumDecorator(GPSAdapter):
     def __init__(self, car: GPSAdapter, premium_paket: str='Включен премиум-сервис: улучшенное качество обслуживания, прохладительный приветственный напиток, Wi-Fi'):
         self.car = car
         self.premium_paket = premium_paket
-        self.location = None
-        self.car_brand = None
 
     def info_by_car(self, indent=0):
         return f'{self.car.info_by_car()}\n\t\t\t<< {self.premium_paket} >>'
