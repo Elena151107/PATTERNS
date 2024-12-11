@@ -69,7 +69,7 @@ class Car(CarComponent):
     def set_driver(self, driver: Driver):
         return driver.info_by_driver()
 
-    def set_loc(self, location='База'):
+    def set_loc(self, location):
         return f'Местонахождение автомобиля в настоящий момент: {location}'
 
 
